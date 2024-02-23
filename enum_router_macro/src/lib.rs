@@ -144,7 +144,7 @@ fn routes_macro(input: DeriveInput) -> Result<TokenStream2> {
                 }
             }
 
-            fn router() -> ::axum::Router<#state_generic> {
+            pub fn router() -> ::axum::Router<#state_generic> {
                 use ::axum::routing::{get, post, patch, put, delete};
                 ::axum::Router::new()#(#axum_route)*
             }
